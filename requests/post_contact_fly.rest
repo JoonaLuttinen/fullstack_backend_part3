@@ -1,0 +1,7 @@
+POST https://fullstack-backend-blue-voice-119.fly.dev/api/persons
+Content-Type: application/json
+
+{
+    "name": "testi teemu",
+    "number": "111111-11111"
+}

@@ -9,7 +9,7 @@
     "dev": "nodemon index.js",
     "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../fullstack/osa_2/puhelinluettelo && npm run build && @powershell Copy-Item dist -Recurse ../../../Fullstack_backend",
     "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",    
+    "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs"
   },
   "author": "Joona Luttinen",
@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.5.2",
     "morgan": "^1.10.0"
   }
 }
