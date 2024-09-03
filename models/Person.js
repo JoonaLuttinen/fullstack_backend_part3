@@ -6,8 +6,21 @@ mongoose.set('strictQuery', false)
 mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
-    name: String,
-    number: String
+    name:{
+      type: String,
+      minlength: 5,
+      required: true
+    },
+    number: {
+      type: String,
+      validate: {
+        validator: (val) => {
+          regEx2 = /\d{2}-\d{6,}/
+          regEx3 = /\d{3}-\d{5,}/
+          return regEx2.test(val) || regEx3.test(val)
+        }
+      } 
+    }
 })
 personSchema.set('toJSON', {
     transform: (document, returnedObject) => {
